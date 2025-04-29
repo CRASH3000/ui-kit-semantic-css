@@ -1,0 +1,42 @@
+/* === Поля ввода === */
+.input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5em 1em;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Ошибки */
+  .input--error {
+    border-color: red;
+  }
+  
+  .input-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+  }
+  
+  /* Иконка внутри поля */
+  .input-with-icon .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 300px;
+  }
+  
+  .input-icon {
+    width: 24px;
+    height: 24px;
+  }
+  

@@ -1,0 +1,83 @@
+/* === Навигационное меню === */
+.navbar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1em;
+    position: relative;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .navbar-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .navbar-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Иконка */
+  .navbar-toggle .icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Адаптивное поведение */
+  @media (max-width: 900px) {
+    .navbar-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #007bff;
+      width: 100%;
+      padding: 1rem 0;
+      border-top: 1px solid #fff;
+    }
+  
+    .navbar-menu.active {
+      display: block;
+    }
+  
+    .navbar-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  }
+  

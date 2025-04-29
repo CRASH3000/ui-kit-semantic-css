@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Документация UI Kit</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <h1>Документация UI Kit</h1>
+
+  <section>
+    <h2>Кнопки (Buttons)</h2>
+    <p>Компоненты кнопок для различных действий: основная, второстепенная, неактивная. Поддерживают состояния hover, focus, active, disabled. Имеют три размера.</p>
+
+    <!-- Примеры кнопок -->
+    <div class="button-group">
+      <button class="button button--primary button--small">Primary Small</button>
+      <button class="button button--primary button--medium">Primary Medium</button>
+      <button class="button button--primary button--large">Primary Large</button>
+      <button class="button button--secondary button--medium">Secondary</button>
+      <button class="button button--primary button--medium" disabled>Disabled</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Поля ввода (Inputs)</h2>
+    <p>Текстовые поля ввода. Поддерживают состояния: normal, focus, error. Возможно добавление иконки.</p>
+
+    <!-- Пример поля ввода -->
+    <div class="input-group input-with-icon">
+      
+        <div class="input-wrapper">
+        <input type="text" id="basic-input" class="input input--normal" placeholder="Введите текст...">
+        <img src="images/find-icon.png" alt="Иконка поиска" class="input-icon">
+      </div>
+      <p class="input-error">Ошибка: введите не более 5 символов</p>
+    </div>
+  </section>
+
+  <script>
+    const input = document.getElementById('basic-input');
+    const errorText = document.querySelector('.input-error');
+  
+    input.addEventListener('input', () => {
+      if (input.value.length > 5) {
+        errorText.style.display = 'block'; // Показать ошибку
+      } else {
+        errorText.style.display = 'none'; // Скрыть ошибку
+      }
+    });
+  </script>
+
+  <section>
+    <h2>Карточки (Cards)</h2>
+    <p>
+        Карточки с заголовком, изображением и текстом. <br>
+        Имеются модификаторы размера: маленькая, средняя, большая. Карточки могут быть без изображения.
+    </p>
+
+    <!-- Примеры карточек -->
+    <div class="card-group">
+      <div class="card card--large">
+        <img src="images/image-cards-1.png" alt="Фильм" class="card-image">
+        <div class="card-content">
+          <h3 class="card-title">Лило и Стич (2002)</h3>
+          <p class="card-text">Инопланетянин Стич сбегает на Землю и попадает в семью маленькой Лило, где учится дружбе и любви.</p>
+          <button class="button button--primary button--small">Смотреть</button>
+        </div>
+      </div>
+
+      <div class="card card--medium">
+        <img src="images/image-cards-2.png" alt="Лило и Стич 2" class="card-image">
+        <div class="card-content">
+          <h3 class="card-title">Лило и Стич 2: Большая проблема Стича (2005)</h3>
+          <p class="card-text">Стич начинает терять контроль над собой, и Лило должна помочь ему спасти себя и их дружбу.</p>
+        </div>
+      </div>
+
+      <div class="card card--small">
+        <img src="images/image-cards-3.png" alt="Сериал Лило и Стич" class="card-image">
+        <div class="card-content">
+          <h3 class="card-title">Лило и Стич 
+            Лило и Стич (сериал 2003 – 2006)"</h3>
+          <p class="card-text">Стич и Лило ловят других экспериментальных существ, чтобы помочь им найти своё место.</p>
+        </div>
+      </div>
+
+      <div class="card card--medium card--no-image">
+        <div class="card-content">
+          <h3 class="card-title">Лило и Стич 3</h3>
+          <p class="card-text">Этот фильм никогда не вышел... но если бы он существовал — он был бы о путешествиях во времени.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Навигационное меню (Navbar)</h2>
+    <p>Адаптивное меню: горизонтальное на десктопе и гамбургер-меню на мобильных устройствах.</p>
+
+    <!-- Пример навигационного меню -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="#" class="navbar-logo">UI Kit</a>
+
+        <button class="navbar-toggle" id="menuToggle" aria-label="Открыть меню">
+          <img src="images/burger.png" alt="Открыть меню" class="icon">
+        </button>
+      </div>
+
+      <nav class="navbar-menu" id="menu">
+        <ul class="navbar-list">
+          <li><a href="#buttons" class="navbar-link">Buttons</a></li>
+          <li><a href="#inputs" class="navbar-link">Inputs</a></li>
+          <li><a href="#cards" class="navbar-link">Cards</a></li>
+        </ul>
+      </nav>
+    </header>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      toggle.innerHTML = menu.classList.contains('active') ? '✕' : '<img src="images/burger.png" alt="Меню" class="icon">';
+    });
+  </script>
+
+</body>
+</html>
