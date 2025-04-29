@@ -1,0 +1,47 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency folders
+node_modules/
+
+# Compiled CSS from SCSS (если будешь использовать SCSS)
+*.css.map
+*.scssc
+
+# Output / build folders
+dist/
+build/
+out/
+
+# Environment files
+.env
+.env.*.local
+
+# Temp files
+*.tmp
+*.swp
+*~
+
+# Thumbnails
+._*
+
+# IDE and Editor settings
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# GitHub-specific
+*.tgz
